@@ -1,10 +1,10 @@
 uuid: 84626bf7-9ade-4005-8e50-3bb064871b77
-name: 'Drush Site-Install'
+name: 'My Project'
 mail: admin@example.com
-slogan: ''
+slogan: 'My Project'
 page:
-  403: ''
-  404: ''
+  403: /node
+  404: /node
   front: /node
 admin_compact_mode: false
 weight_select_max: 100
