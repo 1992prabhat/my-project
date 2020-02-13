@@ -1,0 +1,8 @@
+
+mycustommodule.get_system_setting_controller_content:
+  path: '/mycustommodule/get-settings'
+  defaults:
+    _controller: '\Drupal\mycustommodule\Controller\GetSystemSettingController::content'
+    _title: 'content'
+  requirements:
+    _permission: 'access content'

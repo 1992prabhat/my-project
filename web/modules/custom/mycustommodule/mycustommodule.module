@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * @file
+ * Contains mycustommodule.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function mycustommodule_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the mycustommodule module.
+    case 'help.page.mycustommodule':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Awesome Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function mycustommodule_form_alter(array &$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if($form_id == 'system_site_information_settings') {
+    $a=0;
+    $form["site_information"]["site_slogan"]['#required'] = TRUE;
+    $form["front_page"]["site_frontpage"]['#required'] = TRUE;
+    $form["error_page"]['site_403']['#required'] = TRUE;
+    $form["error_page"]['site_404']['#required'] = TRUE;
+    $form['#validate'][] = 'system_site_information_validate';
+    
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function mycustommodule_theme() {
+  return [
+    'mycustommodule' => [
+      'render element' => 'children',
+    ],
+  ];
+}
