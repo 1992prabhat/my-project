@@ -1,10 +1,10 @@
 country:
-  default: ''
+  default: IN
 first_day: 0
 timezone:
-  default: Europe/Berlin
+  default: Asia/Kolkata
   user:
-    configurable: true
+    configurable: false
     warn: false
     default: 0
 _core:

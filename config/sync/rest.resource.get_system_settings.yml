@@ -1,0 +1,18 @@
+uuid: 05cba20a-3805-4d8d-8733-aca09bcef375
+langcode: en
+status: true
+dependencies:
+  module:
+    - mycustommodule
+    - serialization
+    - user
+id: get_system_settings
+plugin_id: get_system_settings
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - cookie
